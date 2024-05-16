@@ -11,9 +11,10 @@ def substrings(word, string_array)
     loop do
       subword.push(word[index_position])
       substring_index_array.push(subword.join)
-      index_position += 1
       break if index_position == word_index_length
+      index_position += 1
     end
+    index_position = i
     subword = []
   end
   substring_index_array.map {|element|
@@ -22,10 +23,11 @@ def substrings(word, string_array)
       count_hash[element] = word_count
     end
     }
-  return count_hash
+  puts count_hash
 end
 
 
 dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"]
 
 substrings("below", dictionary)
+substrings("Howdy partner, sit down! How's it going?", dictionary)
